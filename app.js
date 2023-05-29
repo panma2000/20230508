@@ -16,6 +16,10 @@ app.use(express.static(path.join(__dirname, 'docs')));
 app.use(express.json());
 app.use(cors());
 
+app.get('/', () => {
+    res.send('Hello world');
+});
+
 app.post('/chat', (req, res) => {
     const prompt = req.body.prompt;
     try {
